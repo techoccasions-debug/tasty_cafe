@@ -2167,7 +2167,10 @@ right:20px;
 #fh5co-header {
   position: relative;
   overflow: hidden;
+  height: 100vh;
 }
+
+/* SLIDESHOW CONTAINER */
 
 .hero-slideshow {
   position: absolute;
@@ -2177,36 +2180,59 @@ right:20px;
   left: 0;
 }
 
+/* EACH SLIDE */
+
 .hero-slide {
   position: absolute;
   width: 100%;
   height: 100%;
+  top: 0;
+  left: 0;
+
   opacity: 0;
-  transition: opacity 2s ease-in-out, transform 8s ease;
+  z-index: 1;
+
+  transition: opacity 2s ease-in-out,
+              transform 8s ease;
+
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
+
   transform: scale(1);
 }
 
+/* ACTIVE SLIDE */
+
 .hero-slide.active {
-  opacity: 1;
+  opacity: 1 !important;
+  z-index: 2;
   transform: scale(1.08);
 }
+
+/* DARK OVERLAY */
 
 #fh5co-header .overlay {
   position: absolute;
   top: 0;
   left: 0;
+
   background: rgba(0,0,0,0.55);
+
   width: 100%;
   height: 100%;
-  z-index: 1;
+
+  z-index: 3;
 }
+
+/* CONTENT ABOVE SLIDES */
 
 #fh5co-header .container {
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
+
+/* TITLE */
 
 #fh5co-header h1 {
   color: #fff;
@@ -2220,6 +2246,8 @@ right:20px;
   font-style: normal;
 }
 
+/* MOBILE */
+
 @media screen and (max-width: 768px) {
 
   #fh5co-header h1 {
@@ -2228,4 +2256,5 @@ right:20px;
     padding: 0 15px;
   }
 
+}
 }
